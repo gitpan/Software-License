@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.000
+version 0.001
 
 =cut
 
-our $VERSION = '0.000';
+our $VERSION = '0.001';
 
 use Class::ISA ();
 use Sub::Install ();
@@ -48,12 +48,7 @@ sub new {
 
   Carp::croak "no copyright holder specified" unless $arg->{holder};
 
-  my $guts = {
-    holder => $arg->{holder},
-    year   => $arg->{year},
-  };
-
-  bless $guts => $class;
+  bless $arg => $class;
 }
 
 =head1 year
