@@ -20,6 +20,7 @@ lib/Software/License/GPL_1.pm
 lib/Software/License/GPL_2.pm
 lib/Software/License/GPL_3.pm
 lib/Software/License/LGPL_2_1.pm
+lib/Software/License/LGPL_3_0.pm
 lib/Software/License/MIT.pm
 lib/Software/License/Mozilla_1_0.pm
 lib/Software/License/Mozilla_1_1.pm
@@ -27,11 +28,13 @@ lib/Software/License/Perl_5.pm
 lib/Software/License/QPL_1_0.pm
 lib/Software/License/Sun.pm
 lib/Software/License/Zlib.pm
+lib/Software/LicenseUtils.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
 t/basic.t
+t/utils.t
 xt/pod-coverage.t
 xt/pod.t

@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =cut
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Class::ISA ();
 use Sub::Install ();
@@ -61,6 +61,12 @@ These methods are attribute readers.
 
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
+
+=head2 url
+
+This method returns the URL at which a canonical text of the license can be
+found, if one is available.  If possible, this will point at plain text, but it
+may point to an HTML resource.
 
 =head2 notice
 
