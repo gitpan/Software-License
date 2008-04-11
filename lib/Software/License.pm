@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =cut
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use Class::ISA ();
 use Sub::Install ();
@@ -51,7 +51,7 @@ sub new {
   bless $arg => $class;
 }
 
-=head1 year
+=head2 year
 
 =head2 holder
 
@@ -61,6 +61,11 @@ These methods are attribute readers.
 
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
+
+=head2 name
+
+This method returns the name of the license, suitable for shoving in the middle
+of a sentence, generally with a leading capitalized "The."
 
 =head2 url
 
