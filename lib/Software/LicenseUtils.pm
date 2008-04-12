@@ -10,7 +10,7 @@ Software::LicenseUtils - little useful bits of code for licensey things
 
 =head2 guess_license_from_pod
 
-  my @guesses = Software::LicenseUtils->guess_license_from_pm($pm_text);
+  my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
 
 Given text containing POD, like a .pm file, this method will attempt to guess
 at the license under which the code is available.  This method will either
@@ -24,6 +24,7 @@ my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
 my @phrases = (
   "under the same (?:terms|license) as perl $_v?6" => [],
   'under the same (?:terms|license) as perl' => 'Perl_5',
+  'affero g'                                 => 'AGPL_3',
   "GNU public license $_v?([123])"           => sub { "GPL_$_[0]_0" },
   'GNU public license'                       => [ map {"GPL_$_\_0"} (1..3) ],
   "GNU lesser public license $_v?([23])\\D"  => sub {
@@ -98,9 +99,9 @@ my %yaml_keys = (
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta_yml($yaml_str);
 
-Given text containing POD, like a .pm file, this method will attempt to guess
-at the license under which the code is available.  This method will either
-a list of Software::License classes (or instances) or false.
+Given the content of the META.yml file found in a CPAN distribution, this
+method makes a guess as to which licenses may apply to the distribution.  It
+will return a list of zero or more Software::License instances or classes.
 
 =cut
 
@@ -108,7 +109,7 @@ sub guess_license_from_meta_yml {
   my ($class, $yaml_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $yaml_text =~ m{license: (.+)}g;
+  my ($license_text) = $yaml_text =~ m{^license: (.+)}gm;
 
   return unless $license_text and my $license = $yaml_keys{ $license_text };
   return "Software::License::$license";
