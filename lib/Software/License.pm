@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =cut
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 use Class::ISA ();
 use Sub::Install ();
@@ -119,6 +119,15 @@ sub version  {
   return unless @vparts;
   return join '.', @vparts;
 }
+
+=head2 meta_yml_name
+
+This method returns the string that should be used for this license in the CPAN
+META.yml file, or undef if there is no known string to use.
+
+=cut
+
+sub meta_yml_name { return undef; }
 
 sub _fill_in {
   my ($self, $which) = @_;
