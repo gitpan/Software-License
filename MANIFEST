@@ -39,6 +39,7 @@ MANIFEST			This list of files
 META.yml
 README
 t/basic.t
+t/bsd-url.t
 t/round-trip.t
 t/utils.t
 xt/release/pod-coverage.t
