@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =cut
 
-our $VERSION = '0.010';
+our $VERSION = '0.011';
 
 use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
 use Sub::Install ();
@@ -120,14 +120,18 @@ sub version  {
   return join '.', @vparts;
 }
 
-=head2 meta_yml_name
+=head2 meta_name
 
 This method returns the string that should be used for this license in the CPAN
-META.yml file, or undef if there is no known string to use.
+META.json or META.yml file, or undef if there is no known string to use.
+
+This method may also be invoked as C<meta_yml_name> for legacy reasons.
 
 =cut
 
-sub meta_yml_name { return undef; }
+sub meta_name { return undef; }
+
+sub meta_yml_name { $_[0]->meta_name }
 
 sub _fill_in {
   my ($self, $which) = @_;
@@ -147,6 +151,58 @@ sub _fill_in {
 =over
 
 =item * register licenses with aliases to allow $registry->get('gpl', 2);
+
+=back
+
+=head1 SEE ALSO
+
+The specific license:
+
+=over
+
+=item * L<Software::License::AGPL_3>
+
+=item * L<Software::License::Apache_1_1>
+
+=item * L<Software::License::Apache_2_0>
+
+=item * L<Software::License::Artistic_1_0>
+
+=item * L<Software::License::Artistic_2_0>
+
+=item * L<Software::License::BSD>
+
+=item * L<Software::License::FreeBSD>
+
+=item * L<Software::License::GFDL_1_2>
+
+=item * L<Software::License::GPL_1>
+
+=item * L<Software::License::GPL_2>
+
+=item * L<Software::License::GPL_3>
+
+=item * L<Software::License::LGPL_2_1>
+
+=item * L<Software::License::LGPL_3_0>
+
+=item * L<Software::License::MIT>
+
+=item * L<Software::License::Mozilla_1_0>
+
+=item * L<Software::License::Mozilla_1_1>
+
+=item * L<Software::License::OpenSSL>
+
+=item * L<Software::License::Perl_5>
+
+=item * L<Software::License::QPL_1_0>
+
+=item * L<Software::License::SSLeay>
+
+=item * L<Software::License::Sun>
+
+=item * L<Software::License::Zlib>
 
 =back
 

@@ -2,8 +2,12 @@
 abstract: 'packages that provide templated software licenses'
 author:
   - 'Ricardo Signes <rjbs@cpan.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.79'
+generated_by: 'Module::Install version 0.88'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -13,6 +17,7 @@ no_index:
   directory:
     - inc
     - t
+    - xt
 requires:
   Data::Section: 0.000
   Sub::Install: 0.000
@@ -21,4 +26,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/rjbs/software-license
-version: 0.010
+version: 0.011
