@@ -26,4 +26,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/rjbs/software-license
-version: 0.013
+version: 0.014
