@@ -4,6 +4,7 @@ author:
   - 'Ricardo Signes <rjbs@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
+  Test::More: 0.88
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -26,4 +27,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/rjbs/software-license
-version: 0.014
+version: 0.015
