@@ -16,6 +16,7 @@ lib/Software/License/Apache_2_0.pm
 lib/Software/License/Artistic_1_0.pm
 lib/Software/License/Artistic_2_0.pm
 lib/Software/License/BSD.pm
+lib/Software/License/CC0_1_0.pm
 lib/Software/License/FreeBSD.pm
 lib/Software/License/GFDL_1_2.pm
 lib/Software/License/GPL_1.pm
@@ -26,6 +27,7 @@ lib/Software/License/LGPL_3_0.pm
 lib/Software/License/MIT.pm
 lib/Software/License/Mozilla_1_0.pm
 lib/Software/License/Mozilla_1_1.pm
+lib/Software/License/None.pm
 lib/Software/License/OpenSSL.pm
 lib/Software/License/Perl_5.pm
 lib/Software/License/QPL_1_0.pm
