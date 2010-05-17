@@ -1,19 +1,44 @@
 use strict;
 use warnings;
 package Software::License::Apache_1_1;
+BEGIN {
+  $Software::License::Apache_1_1::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: The Apache Software License, Version 1.1
+
+sub name { 'The Apache Software License, Version 1.1' }
+sub url  { 'http://www.apache.org/licenses/LICENSE-1.1' }
+sub meta_name  { 'apache' }
+sub meta2_name { 'apache_1_1' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::Apache_1_1 - The Apache Software License, Version 1.1
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The Apache Software License, Version 1.1' }
-sub url  { 'http://www.apache.org/licenses/LICENSE-1.1' }
-sub meta_name { 'apache' }
 
-1;
 __DATA__
 __LICENSE__
 Apache Software License

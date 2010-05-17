@@ -1,11 +1,31 @@
 use strict;
 use warnings;
 package Software::License::CC0_1_0;
+BEGIN {
+  $Software::License::CC0_1_0::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: the "public domain"-like CC0 license, version 1.0
+
+
+sub name      { q(CC0 License) }
+sub url       { q{http://creativecommons.org/publicdomain/zero/1.0/} }
+
+sub meta_name  { 'unrestricted' }
+sub meta2_name { 'unrestricted' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::CC0_1_0 - the "public domain"-like CC0 license, version 1.0
+
+=head1 VERSION
+
+version 0.101370
 
 =head1 WARNING
 
@@ -18,14 +38,20 @@ with your software.  You cannot reverse your decision to dedicate software as
 public property, so use this only if you're quite sure that you mean to do
 it.
 
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name      { q(CC0 License) }
-sub url       { q{http://creativecommons.org/publicdomain/zero/1.0/} }
 
-sub meta_name { 'unrestricted' }
-
-1;
 __DATA__
 __NOTICE__
 

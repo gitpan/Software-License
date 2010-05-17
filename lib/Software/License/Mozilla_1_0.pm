@@ -1,19 +1,44 @@
 use strict;
 use warnings;
 package Software::License::Mozilla_1_0;
+BEGIN {
+  $Software::License::Mozilla_1_0::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: Mozilla Public License 1.0
+
+sub name { 'The Mozilla Public License 1.0' }
+sub url  { 'http://www.mozilla.org/MPL/MPL-1.0.txt' }
+sub meta_name  { 'mozilla' }
+sub meta2_name { 'mozilla_1_0' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::Mozilla_1_0 - Mozilla Public License 1.0
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The Mozilla Public License 1.0' }
-sub url  { 'http://www.mozilla.org/MPL/MPL-1.0.txt' }
-sub meta_name { 'mozilla' }
 
-1;
 __DATA__
 __LICENSE__
 Mozilla Public License (Version 1.0)

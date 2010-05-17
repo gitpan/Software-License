@@ -1,19 +1,44 @@
 use strict;
 use warnings;
 package Software::License::LGPL_2_1;
+BEGIN {
+  $Software::License::LGPL_2_1::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: GNU Lesser General Public License, Version 2.1
+
+sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }
+sub url  { 'http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt' }
+sub meta_name  { 'lgpl' }
+sub meta2_name { 'lgpl_2_1' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::LGPL_2_1 - GNU Lesser General Public License, Version 2.1
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }
-sub url  { 'http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt' }
-sub meta_name { 'lgpl' }
 
-1;
 __DATA__
 __LICENSE__
 The GNU Lesser General Public License (LGPL)

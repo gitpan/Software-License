@@ -1,20 +1,45 @@
 use strict;
 use warnings;
 package Software::License::QPL_1_0;
+BEGIN {
+  $Software::License::QPL_1_0::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: The Q Public License, Version 1.0
+
+sub name { 'The Q Public License, Version 1.0' }
+sub url  { 'http://trolltech.com/products/qt/licenses/licensing/qpl' }
+
+sub meta_name  { 'open_source' }
+sub meta2_name { 'qpl_1_0' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::QPL_1_0 - The Q Public License, Version 1.0
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The Q Public License, Version 1.0' }
-sub url  { 'http://trolltech.com/products/qt/licenses/licensing/qpl' }
 
-sub meta_name { 'open_source' }
-
-1;
 __DATA__
 __LICENSE__
 The Q Public License

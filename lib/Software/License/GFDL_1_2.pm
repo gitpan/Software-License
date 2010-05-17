@@ -1,19 +1,44 @@
 use strict;
 use warnings;
 package Software::License::GFDL_1_2;
+BEGIN {
+  $Software::License::GFDL_1_2::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: The GNU Free Documentation License
+
+sub name { 'GNU Free Documentation License' }
+sub url  { 'http://www.gnu.org/copyleft/fdl.html' }
+sub meta_name  { 'open_source' }
+sub meta2_name { 'gfdl_1_2' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::GFDL_1_2 - The GNU Free Documentation License
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'GNU Free Documentation License' }
-sub url  { 'http://www.gnu.org/copyleft/fdl.html' }
-sub meta_name { 'unrestricted' }
 
-1;
 __DATA__
 __NOTICE__
  Copyright (c)  {{$self->year}}  {{$self->holder}}.

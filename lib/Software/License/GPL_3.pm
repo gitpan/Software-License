@@ -1,19 +1,44 @@
 use strict;
 use warnings;
 package Software::License::GPL_3;
+BEGIN {
+  $Software::License::GPL_3::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: GNU General Public License, Version 3
+
+sub name { 'The GNU General Public License, Version 3, June 2007' }
+sub url  { 'http://www.gnu.org/licenses/gpl-3.0.txt' }
+sub meta_name  { 'gpl' }
+sub meta2_name { 'gpl_3' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::GPL_3 - GNU General Public License, Version 3
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The GNU General Public License, Version 3, June 2007' }
-sub url  { 'http://www.gnu.org/licenses/gpl-3.0.txt' }
-sub meta_name { 'gpl' }
 
-1;
 __DATA__
 __LICENSE__
                     GNU GENERAL PUBLIC LICENSE

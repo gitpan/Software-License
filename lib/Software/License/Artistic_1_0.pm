@@ -1,11 +1,45 @@
 use strict;
 use warnings;
 package Software::License::Artistic_1_0;
+BEGIN {
+  $Software::License::Artistic_1_0::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: The Artistic License
+
+
+sub aggregation_clause {
+  exists $_[0]->{aggregation_clause} ? $_[0]->{aggregation_clause} : 1
+}
+
+sub url { 'http://www.perlfoundation.org/artistic_license_1_0' }
+
+sub name {
+  my ($self) = @_;
+
+  my $name = 'The Artistic License 1.0';
+  if (ref $self and not $self->aggregation_clause) {
+    $name .= ' without Aggregation Clause';
+  }
+
+  return $name;
+}
+
+sub meta_name  { 'artistic' }
+sub meta2_name { 'artistic_1_0' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::Artistic_1_0 - The Artistic License
+
+=head1 VERSION
+
+version 0.101370
 
 =head1 OPTIONS
 
@@ -28,28 +62,20 @@ pair when instantiating the license:
 This method returns whether the aggregation clause is allowed on this instance.
 By default this method returns true on instances and dies on the class.
 
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub aggregation_clause {
-  exists $_[0]->{aggregation_clause} ? $_[0]->{aggregation_clause} : 1
-}
 
-sub url { 'http://www.perlfoundation.org/artistic_license_1_0' }
-
-sub name {
-  my ($self) = @_;
-
-  my $name = 'The Artistic License 1.0';
-  if (ref $self and not $self->aggregation_clause) {
-    $name .= ' without Aggregation Clause';
-  }
-
-  return $name;
-}
-
-sub meta_name { 'artistic' }
-
-1;
 __DATA__
 __LICENSE__
 The Artistic License

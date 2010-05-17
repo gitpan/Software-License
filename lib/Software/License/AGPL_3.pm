@@ -1,20 +1,45 @@
 use strict;
 use warnings;
 package Software::License::AGPL_3;
+BEGIN {
+  $Software::License::AGPL_3::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: GNU Affero General Public License, Version 3
+
+sub name { 'The GNU Affero General Public License, Version 3, November 2007' }
+sub url  { 'http://www.gnu.org/licenses/agpl-3.0.txt' }
+
+sub meta_name  { 'open_source' }
+sub meta2_name { 'agpl_3' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::AGPL_3 - GNU Affero General Public License, Version 3
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The GNU Affero General Public License, Version 3, November 2007' }
-sub url  { 'http://www.gnu.org/licenses/agpl-3.0.txt' }
 
-sub meta_name { 'open_source' }
-
-1;
 __DATA__
 __LICENSE__
                     GNU AFFERO GENERAL PUBLIC LICENSE

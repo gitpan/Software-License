@@ -1,22 +1,55 @@
+
 use strict;
 use warnings;
 
-use inc::Module::Install;
+ BEGIN { require 5.006; } 
 
-name          ('Software-License');
-author        ('Ricardo Signes <rjbs@cpan.org>');
-license       ('perl');
-all_from      ('lib/Software/License.pm');
+use ExtUtils::MakeMaker 6.31;
 
-requires('Data::Section'       => '0.000'); # minimum unknown
-requires('Sub::Install'        => '0.000'); # minimum unknown
-requires('Text::Template'      => '0.000'); # minimum unknown
 
-build_requires('Test::More'    => '0.88'); # done_testing!
 
-extra_tests;
+my %WriteMakefileArgs = (
+  'ABSTRACT' => 'packages that provide templated software licenses',
+  'AUTHOR' => 'Ricardo Signes <rjbs@cpan.org>',
+  'BUILD_REQUIRES' => {
+    'Test::More' => '0.88'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Software-License',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'Software::License',
+  'PREREQ_PM' => {
+    'Data::Section' => '0',
+    'Sub::Install' => '0',
+    'Text::Template' => '0'
+  },
+  'VERSION' => '0.101370',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
 
-repository('http://github.com/rjbs/software-license');
-auto_manifest;
 
-WriteAll();
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM}; 
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod}; 
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+

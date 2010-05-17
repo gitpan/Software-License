@@ -1,24 +1,11 @@
 use strict;
 use warnings;
 package Software::LicenseUtils;
+BEGIN {
+  $Software::LicenseUtils::VERSION = '0.101370';
+}
+# ABSTRACT: little useful bits of code for licensey things
 
-=head1 NAME
-
-Software::LicenseUtils - little useful bits of code for licensey things
-
-=head1 METHODS
-
-=head2 guess_license_from_pod
-
-  my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
-
-Given text containing POD, like a .pm file, this method will attempt to guess
-at the license under which the code is available.  This method will either
-a list of Software::License classes (or instances) or false.
-
-Calling this method in scalar context is a fatal error.
-
-=cut
 
 my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
 my @phrases = (
@@ -95,15 +82,6 @@ my %meta_keys = (
   mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
 );
 
-=head2 guess_license_from_meta
-
-  my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
-
-Given the content of the META.(yml|json) file found in a CPAN distribution, this
-method makes a guess as to which licenses may apply to the distribution.  It
-will return a list of zero or more Software::License instances or classes.
-
-=cut
 
 sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
@@ -119,3 +97,48 @@ sub guess_license_from_meta {
 *guess_license_from_meta_yml = \&guess_license_from_meta;
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Software::LicenseUtils - little useful bits of code for licensey things
+
+=head1 VERSION
+
+version 0.101370
+
+=head1 METHODS
+
+=head2 guess_license_from_pod
+
+  my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
+
+Given text containing POD, like a .pm file, this method will attempt to guess
+at the license under which the code is available.  This method will either
+a list of Software::License classes (or instances) or false.
+
+Calling this method in scalar context is a fatal error.
+
+=head2 guess_license_from_meta
+
+  my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
+
+Given the content of the META.(yml|json) file found in a CPAN distribution, this
+method makes a guess as to which licenses may apply to the distribution.  It
+will return a list of zero or more Software::License instances or classes.
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

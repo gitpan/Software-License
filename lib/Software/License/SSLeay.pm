@@ -1,19 +1,44 @@
 use strict;
 use warnings;
 package Software::License::SSLeay;
+BEGIN {
+  $Software::License::SSLeay::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: The Original SSLeay License
+
+sub name { 'Original SSLeay License' }
+sub url  { 'http://h71000.www7.hp.com/doc/83final/BA554_90007/apcs02.html' }
+sub meta_name  { 'unrestricted' }
+sub meta2_name { 'ssleay' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::SSLeay - The Original SSLeay License
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'Original SSLeay License' }
-sub url  { 'http://h71000.www7.hp.com/doc/83final/BA554_90007/apcs02.html' }
-sub meta_name { 'unrestricted' }
 
-1;
 __DATA__
 __LICENSE__
   Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com) All rights reserved.

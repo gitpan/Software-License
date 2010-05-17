@@ -1,20 +1,19 @@
 use strict;
 use warnings;
 package Software::License::Perl_5;
+BEGIN {
+  $Software::License::Perl_5::VERSION = '0.101370';
+}
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::Perl_5 - The Perl 5 License (Artistic 1 & GPL 1)
-
-=cut
+# ABSTRACT: The Perl 5 License (Artistic 1 & GPL 1)
 
 require Software::License::GPL_1;
 require Software::License::Artistic_1_0;
 
 sub name { 'the same terms as the perl 5 programming language system itself' }
 sub url  { 'http://dev.perl.org/licenses/' }
-sub meta_name { 'perl' }
+sub meta_name  { 'perl' }
+sub meta2_name { 'perl_5' }
 
 sub _gpl {
   my ($self) = @_;
@@ -33,6 +32,32 @@ sub _tal {
 }
 
 1;
+
+
+=pod
+
+=head1 NAME
+
+Software::License::Perl_5 - The Perl 5 License (Artistic 1 & GPL 1)
+
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+
 __DATA__
 __NOTICE__
 This software is copyright (c) {{$self->year}} by {{$self->holder}}.

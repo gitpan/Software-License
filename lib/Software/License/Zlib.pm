@@ -1,20 +1,45 @@
 use strict;
 use warnings;
 package Software::License::Zlib;
+BEGIN {
+  $Software::License::Zlib::VERSION = '0.101370';
+}
 use base 'Software::License';
+# ABSTRACT: The zlib License
+
+sub name { 'The zlib License' }
+sub url  { 'http://www.zlib.net/zlib_license.html' }
+
+sub meta_name  { 'open_source' }
+sub meta2_name { 'zlib' }
+
+1;
+
+
+=pod
 
 =head1 NAME
 
 Software::License::Zlib - The zlib License
 
+=head1 VERSION
+
+version 0.101370
+
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
 
-sub name { 'The zlib License' }
-sub url  { 'http://www.zlib.net/zlib_license.html' }
 
-sub meta_name { 'open_source' }
-
-1;
 __DATA__
 __LICENSE__
 The zlib License

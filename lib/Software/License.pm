@@ -2,6 +2,87 @@ use strict;
 use warnings;
 use 5.006; # warnings
 package Software::License;
+BEGIN {
+  $Software::License::VERSION = '0.101370';
+}
+# ABSTRACT: packages that provide templated software licenses
+
+use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
+use Sub::Install ();
+use Text::Template ();
+
+
+sub new {
+  my ($class, $arg) = @_;
+
+  Carp::croak "no copyright holder specified" unless $arg->{holder};
+
+  bless $arg => $class;
+}
+
+
+sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
+sub holder { $_[0]->{holder}     }
+
+
+sub notice { shift->_fill_in('NOTICE') }
+
+
+sub license { shift->_fill_in('LICENSE') }
+
+
+sub fulltext {
+  my ($self) = @_;
+  return join "\n", $self->notice, $self->_fill_in('LICENSE')
+}
+
+
+sub version  {
+  my ($self) = @_;
+  my $pkg = ref $self ? ref $self : $self;
+  $pkg =~ s/.+:://;
+  my (undef, @vparts) = split /_/, $pkg;
+
+  return unless @vparts;
+  return join '.', @vparts;
+}
+
+
+# sub meta1_name    { return undef; } # sort this out later, should be easy
+sub meta_name     { return undef; }
+sub meta_yml_name { $_[0]->meta_name }
+
+sub meta2_name {
+  my ($self) = @_;
+  my $meta1 = $self->meta_name;
+
+  return undef unless defined $meta1;
+
+  return $meta1
+    if $meta1 =~ /\A(?:open_source|restricted|unrestricted|unknown)\z/;
+
+  return undef;
+}
+
+sub _fill_in {
+  my ($self, $which) = @_;
+
+  Carp::confess "couldn't build $which section" unless
+    my $template = $self->section_data($which);
+
+  return Text::Template->fill_this_in(
+    $$template,
+    HASH => { self => \$self },
+    DELIMITERS => [ qw({{ }}) ],
+  );
+}
+
+
+1;
+
+
+
+=pod
 
 =head1 NAME
 
@@ -9,15 +90,7 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.016
-
-=cut
-
-our $VERSION = '0.016';
-
-use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
-use Sub::Install ();
-use Text::Template ();
+version 0.101370
 
 =head1 SYNOPSIS
 
@@ -26,8 +99,6 @@ use Text::Template ();
   });
 
   print $output_fh $license->fulltext;
-
-=head1 DESCRIPTION
 
 =head1 METHODS
 
@@ -41,26 +112,11 @@ arguments are:
   holder - the holder of the copyright; required
   year   - the year of copyright; defaults to current year
 
-=cut
-
-sub new {
-  my ($class, $arg) = @_;
-
-  Carp::croak "no copyright holder specified" unless $arg->{holder};
-
-  bless $arg => $class;
-}
-
 =head2 year
 
 =head2 holder
 
 These methods are attribute readers.
-
-=cut
-
-sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
-sub holder { $_[0]->{holder}     }
 
 =head2 name
 
@@ -79,78 +135,43 @@ This method returns a snippet of text, usually a few lines, indicating the
 copyright holder and year of copyright, as well as an indication of the license
 under which the software is distributed.
 
-=cut
-
-sub notice { shift->_fill_in('NOTICE') }
-
 =head2 license
 
 This method returns the full text of the license.
-
-=cut
-
-sub license { shift->_fill_in('LICENSE') }
 
 =head2 fulltext
 
 This method returns the complete text of the license, preceded by the copyright
 notice.
 
-=cut
-
-sub fulltext {
-  my ($self) = @_;
-  return join "\n", $self->notice, $self->_fill_in('LICENSE')
-}
-
 =head2 version
 
 This method returns the version of the license.  If the license is not
 versioned, this method will return false.
 
-=cut
-
-sub version  {
-  my ($self) = @_;
-  my $pkg = ref $self ? ref $self : $self;
-  $pkg =~ s/.+:://;
-  my (undef, @vparts) = split /_/, $pkg;
-
-  return unless @vparts;
-  return join '.', @vparts;
-}
-
 =head2 meta_name
 
 This method returns the string that should be used for this license in the CPAN
-META.json or META.yml file, or undef if there is no known string to use.
+META.yml file, according to the CPAN Meta spec v1, or undef if there is no
+known string to use.
 
 This method may also be invoked as C<meta_yml_name> for legacy reasons.
 
-=cut
+=head2 meta2_name
 
-sub meta_name { return undef; }
-
-sub meta_yml_name { $_[0]->meta_name }
-
-sub _fill_in {
-  my ($self, $which) = @_;
-
-  Carp::confess "couldn't build $which section" unless
-    my $template = $self->section_data($which);
-
-  return Text::Template->fill_this_in(
-    $$template,
-    HASH => { self => \$self },
-    DELIMITERS => [ qw({{ }}) ],
-  );
-}
+This method returns the string that should be used for this license in the CPAN
+META.json or META.yml file, according to the CPAN Meta spec v2, or undef if
+there is no known string to use.  If this method does not exist, and
+C<meta_name> returns open_source, restricted, unrestricted, or unknown, that
+value will be used.
 
 =head1 TODO
 
-=over
+=over 4
 
-=item * register licenses with aliases to allow $registry->get('gpl', 2);
+=item *
+
+register licenses with aliases to allow $registry->get('gpl', 2);
 
 =back
 
@@ -158,64 +179,119 @@ sub _fill_in {
 
 The specific license:
 
-=over
+=over 4
 
-=item * L<Software::License::AGPL_3>
+=item *
 
-=item * L<Software::License::Apache_1_1>
+L<Software::License::AGPL_3>
 
-=item * L<Software::License::Apache_2_0>
+=item *
 
-=item * L<Software::License::Artistic_1_0>
+L<Software::License::Apache_1_1>
 
-=item * L<Software::License::Artistic_2_0>
+=item *
 
-=item * L<Software::License::BSD>
+L<Software::License::Apache_2_0>
 
-=item * L<Software::License::FreeBSD>
+=item *
 
-=item * L<Software::License::GFDL_1_2>
+L<Software::License::Artistic_1_0>
 
-=item * L<Software::License::GPL_1>
+=item *
 
-=item * L<Software::License::GPL_2>
+L<Software::License::Artistic_2_0>
 
-=item * L<Software::License::GPL_3>
+=item *
 
-=item * L<Software::License::LGPL_2_1>
+L<Software::License::BSD>
 
-=item * L<Software::License::LGPL_3_0>
+=item *
 
-=item * L<Software::License::MIT>
+L<Software::License::CC0>
 
-=item * L<Software::License::Mozilla_1_0>
+=item *
 
-=item * L<Software::License::Mozilla_1_1>
+L<Software::License::FreeBSD>
 
-=item * L<Software::License::OpenSSL>
+=item *
 
-=item * L<Software::License::Perl_5>
+L<Software::License::GFDL_1_2>
 
-=item * L<Software::License::QPL_1_0>
+=item *
 
-=item * L<Software::License::SSLeay>
+L<Software::License::GPL_1>
 
-=item * L<Software::License::Sun>
+=item *
 
-=item * L<Software::License::Zlib>
+L<Software::License::GPL_2>
+
+=item *
+
+L<Software::License::GPL_3>
+
+=item *
+
+L<Software::License::LGPL_2_1>
+
+=item *
+
+L<Software::License::LGPL_3_0>
+
+=item *
+
+L<Software::License::MIT>
+
+=item *
+
+L<Software::License::Mozilla_1_0>
+
+=item *
+
+L<Software::License::Mozilla_1_1>
+
+=item *
+
+L<Software::License::None>
+
+=item *
+
+L<Software::License::OpenSSL>
+
+=item *
+
+L<Software::License::Perl_5>
+
+=item *
+
+L<Software::License::QPL_1_0>
+
+=item *
+
+L<Software::License::SSLeay>
+
+=item *
+
+L<Software::License::Sun>
+
+=item *
+
+L<Software::License::Zlib>
 
 =back
 
+=head1 AUTHOR
+
+  Ricardo Signes <rjbs@cpan.org>
+
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2008 by Ricardo SIGNES.
+This software is copyright (c) 2010 by Ricardo Signes.
 
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 
-1;
 
 __DATA__
 __NOTICE__
