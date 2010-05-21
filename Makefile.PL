@@ -11,9 +11,7 @@ use ExtUtils::MakeMaker 6.31;
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'packages that provide templated software licenses',
   'AUTHOR' => 'Ricardo Signes <rjbs@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0.88'
-  },
+  'BUILD_REQUIRES' => {},
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
@@ -26,7 +24,7 @@ my %WriteMakefileArgs = (
     'Sub::Install' => '0',
     'Text::Template' => '0'
   },
-  'VERSION' => '0.101370',
+  'VERSION' => '0.101410',
   'test' => {
     'TESTS' => 't/*.t'
   }

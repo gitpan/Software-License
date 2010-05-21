@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::GFDL_1_2;
 BEGIN {
-  $Software::License::GFDL_1_2::VERSION = '0.101370';
+  $Software::License::GFDL_1_2::VERSION = '0.101410';
 }
 use base 'Software::License';
 # ABSTRACT: The GNU Free Documentation License
@@ -23,7 +23,7 @@ Software::License::GFDL_1_2 - The GNU Free Documentation License
 
 =head1 VERSION
 
-version 0.101370
+version 0.101410
 
 =head1 AUTHOR
 

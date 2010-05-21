@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Artistic_1_0;
 BEGIN {
-  $Software::License::Artistic_1_0::VERSION = '0.101370';
+  $Software::License::Artistic_1_0::VERSION = '0.101410';
 }
 use base 'Software::License';
 # ABSTRACT: The Artistic License
@@ -26,7 +26,7 @@ sub name {
 }
 
 sub meta_name  { 'artistic' }
-sub meta2_name { 'artistic_1_0' }
+sub meta2_name { 'artistic_1' }
 
 1;
 
@@ -39,7 +39,7 @@ Software::License::Artistic_1_0 - The Artistic License
 
 =head1 VERSION
 
-version 0.101370
+version 0.101410
 
 =head1 OPTIONS
 
