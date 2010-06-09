@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::None;
 BEGIN {
-  $Software::License::None::VERSION = '0.101410';
+  $Software::License::None::VERSION = '0.101600';
 }
 use base 'Software::License';
 # ABSTRACT: describes a "license" that gives no license for re-use
@@ -10,8 +10,8 @@ use base 'Software::License';
 sub name      { q("No License" License) }
 sub url       { undef }
 
-sub meta_name  { 'restricted' }
-sub meta2_name { 'restricted' }
+sub meta_name  { 'restrictive' }
+sub meta2_name { 'restricted'  }
 
 1;
 
@@ -24,7 +24,7 @@ Software::License::None - describes a "license" that gives no license for re-use
 
 =head1 VERSION
 
-version 0.101410
+version 0.101600
 
 =head1 AUTHOR
 

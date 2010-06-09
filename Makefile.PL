@@ -11,7 +11,9 @@ use ExtUtils::MakeMaker 6.31;
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'packages that provide templated software licenses',
   'AUTHOR' => 'Ricardo Signes <rjbs@cpan.org>',
-  'BUILD_REQUIRES' => {},
+  'BUILD_REQUIRES' => {
+    'Test::More' => '0.88'
+  },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
@@ -24,7 +26,7 @@ my %WriteMakefileArgs = (
     'Sub::Install' => '0',
     'Text::Template' => '0'
   },
-  'VERSION' => '0.101410',
+  'VERSION' => '0.101600',
   'test' => {
     'TESTS' => 't/*.t'
   }
@@ -33,10 +35,10 @@ my %WriteMakefileArgs = (
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM}; 
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
   for my $mod ( keys %$br ) {
     if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod}; 
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
     }
     else {
       $pp->{$mod} = $br->{$mod};
