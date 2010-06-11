@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::GPL_3;
 BEGIN {
-  $Software::License::GPL_3::VERSION = '0.101600';
+  $Software::License::GPL_3::VERSION = '0.101620';
 }
 use base 'Software::License';
 # ABSTRACT: GNU General Public License, Version 3
@@ -23,7 +23,7 @@ Software::License::GPL_3 - GNU General Public License, Version 3
 
 =head1 VERSION
 
-version 0.101600
+version 0.101620
 
 =head1 AUTHOR
 

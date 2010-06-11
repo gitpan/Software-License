@@ -2,15 +2,30 @@ use strict;
 use warnings;
 package Software::License::LGPL_3_0;
 BEGIN {
-  $Software::License::LGPL_3_0::VERSION = '0.101600';
+  $Software::License::LGPL_3_0::VERSION = '0.101620';
 }
 use base 'Software::License';
 # ABSTRACT: GNU Lesser General Public License, Version 3
+
+use Software::License::GPL_3;
 
 sub name { 'The GNU Lesser General Public License, Version 3, June 2007' }
 sub url  { 'http://www.gnu.org/licenses/lgpl-3.0.txt' }
 sub meta_name  { 'lgpl' }
 sub meta2_name { 'lgpl_3_0' }
+
+sub fulltext {
+  my ($self) = @_;
+
+  my $lgpl = $self->SUPER::fulltext;
+
+  $lgpl .= "\n\n" . ('-' x 79) . "\n\n";
+
+  my $gpl_3_ref = Software::License::GPL_3->section_data('LICENSE');
+  $lgpl .= $$gpl_3_ref;
+
+  return $lgpl;
+}
 
 1;
 
@@ -23,7 +38,7 @@ Software::License::LGPL_3_0 - GNU Lesser General Public License, Version 3
 
 =head1 VERSION
 
-version 0.101600
+version 0.101620
 
 =head1 AUTHOR
 
