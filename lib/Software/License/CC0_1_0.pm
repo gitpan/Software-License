@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::CC0_1_0;
 BEGIN {
-  $Software::License::CC0_1_0::VERSION = '0.101620';
+  $Software::License::CC0_1_0::VERSION = '0.102250';
 }
 use base 'Software::License';
 # ABSTRACT: the "public domain"-like CC0 license, version 1.0
@@ -25,7 +25,7 @@ Software::License::CC0_1_0 - the "public domain"-like CC0 license, version 1.0
 
 =head1 VERSION
 
-version 0.101620
+version 0.102250
 
 =head1 WARNING
 
@@ -40,7 +40,7 @@ it.
 
 =head1 AUTHOR
 
-  Ricardo Signes <rjbs@cpan.org>
+Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

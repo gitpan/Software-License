@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::LicenseUtils;
 BEGIN {
-  $Software::LicenseUtils::VERSION = '0.101620';
+  $Software::LicenseUtils::VERSION = '0.102250';
 }
 # ABSTRACT: little useful bits of code for licensey things
 
@@ -107,7 +107,7 @@ Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 VERSION
 
-version 0.101620
+version 0.102250
 
 =head1 METHODS
 
@@ -131,7 +131,7 @@ will return a list of zero or more Software::License instances or classes.
 
 =head1 AUTHOR
 
-  Ricardo Signes <rjbs@cpan.org>
+Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

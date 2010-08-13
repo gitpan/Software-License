@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Artistic_1_0;
 BEGIN {
-  $Software::License::Artistic_1_0::VERSION = '0.101620';
+  $Software::License::Artistic_1_0::VERSION = '0.102250';
 }
 use base 'Software::License';
 # ABSTRACT: The Artistic License
@@ -39,7 +39,7 @@ Software::License::Artistic_1_0 - The Artistic License
 
 =head1 VERSION
 
-version 0.101620
+version 0.102250
 
 =head1 OPTIONS
 
@@ -64,7 +64,7 @@ By default this method returns true on instances and dies on the class.
 
 =head1 AUTHOR
 
-  Ricardo Signes <rjbs@cpan.org>
+Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

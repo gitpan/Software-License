@@ -3,7 +3,7 @@ use warnings;
 use 5.006; # warnings
 package Software::License;
 BEGIN {
-  $Software::License::VERSION = '0.101620';
+  $Software::License::VERSION = '0.102250';
 }
 # ABSTRACT: packages that provide templated software licenses
 
@@ -90,7 +90,7 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.101620
+version 0.102250
 
 =head1 SYNOPSIS
 
@@ -281,7 +281,7 @@ L<Software::License::Zlib>
 
 =head1 AUTHOR
 
-  Ricardo Signes <rjbs@cpan.org>
+Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

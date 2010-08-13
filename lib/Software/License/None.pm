@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::None;
 BEGIN {
-  $Software::License::None::VERSION = '0.101620';
+  $Software::License::None::VERSION = '0.102250';
 }
 use base 'Software::License';
 # ABSTRACT: describes a "license" that gives no license for re-use
@@ -24,11 +24,11 @@ Software::License::None - describes a "license" that gives no license for re-use
 
 =head1 VERSION
 
-version 0.101620
+version 0.102250
 
 =head1 AUTHOR
 
-  Ricardo Signes <rjbs@cpan.org>
+Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -42,10 +42,7 @@ the same terms as the Perl 5 programming language system itself.
 
 __DATA__
 __NOTICE__
-This software is copyright (c) {{$self->year}} by {{$self->holder}}
-
-All rights reserved.
+This software is copyright (c) {{$self->year}} by {{$self->holder}}.  No
+license is granted to other entities.
 __LICENSE__
-This software is copyright (c) {{$self->year}} by {{$self->holder}}
-
 All rights reserved.
