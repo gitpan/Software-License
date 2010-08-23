@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::OpenSSL;
 BEGIN {
-  $Software::License::OpenSSL::VERSION = '0.102250';
+  $Software::License::OpenSSL::VERSION = '0.102340';
 }
 use base 'Software::License';
 # ABSTRACT: The OpenSSL License
@@ -33,7 +33,7 @@ Software::License::OpenSSL - The OpenSSL License
 
 =head1 VERSION
 
-version 0.102250
+version 0.102340
 
 =head1 AUTHOR
 

@@ -20,7 +20,7 @@ requires:
   perl: 5.006
 resources:
   repository: git://git.codesimply.com/Software-License.git
-version: 0.102250
+version: 0.102340
 x_Dist_Zilla:
   plugins:
     -

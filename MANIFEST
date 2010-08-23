@@ -27,6 +27,7 @@ lib/Software/License/Mozilla_1_1.pm
 lib/Software/License/None.pm
 lib/Software/License/OpenSSL.pm
 lib/Software/License/Perl_5.pm
+lib/Software/License/PostgreSQL.pm
 lib/Software/License/QPL_1_0.pm
 lib/Software/License/SSLeay.pm
 lib/Software/License/Sun.pm

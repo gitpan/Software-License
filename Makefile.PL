@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     'Sub::Install' => '0',
     'Text::Template' => '0'
   },
-  'VERSION' => '0.102250',
+  'VERSION' => '0.102340',
   'test' => {
     'TESTS' => 't/*.t'
   }
