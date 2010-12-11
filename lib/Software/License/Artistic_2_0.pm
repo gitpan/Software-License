@@ -2,12 +2,12 @@ use strict;
 use warnings;
 package Software::License::Artistic_2_0;
 BEGIN {
-  $Software::License::Artistic_2_0::VERSION = '0.102340';
+  $Software::License::Artistic_2_0::VERSION = '0.102341';
 }
 use base 'Software::License';
 # ABSTRACT: The Artistic License 2.0
 
-sub name { 'The Artistic License 2.0' }
+sub name { 'The Artistic License 2.0 (GPL Compatible)' }
 sub url  { 'http://www.perlfoundation.org/artistic_license_2_0' }
 sub meta_name  { 'artistic_2' }
 sub meta2_name { 'artistic_2' }
@@ -23,7 +23,7 @@ Software::License::Artistic_2_0 - The Artistic License 2.0
 
 =head1 VERSION
 
-version 0.102340
+version 0.102341
 
 =head1 AUTHOR
 

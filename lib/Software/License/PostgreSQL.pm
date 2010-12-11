@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::PostgreSQL;
 BEGIN {
-  $Software::License::PostgreSQL::VERSION = '0.102340';
+  $Software::License::PostgreSQL::VERSION = '0.102341';
 }
 use base 'Software::License';
 # ABSTRACT: The PostgreSQL License
@@ -24,7 +24,7 @@ Software::License::PostgreSQL - The PostgreSQL License
 
 =head1 VERSION
 
-version 0.102340
+version 0.102341
 
 =head1 AUTHOR
 
