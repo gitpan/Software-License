@@ -14,6 +14,7 @@ lib/Software/License/Artistic_1_0.pm
 lib/Software/License/Artistic_2_0.pm
 lib/Software/License/BSD.pm
 lib/Software/License/CC0_1_0.pm
+lib/Software/License/Custom.pm
 lib/Software/License/FreeBSD.pm
 lib/Software/License/GFDL_1_2.pm
 lib/Software/License/GPL_1.pm
@@ -35,6 +36,8 @@ lib/Software/License/Zlib.pm
 lib/Software/LicenseUtils.pm
 t/basic.t
 t/bsd-url.t
+t/custom-license
+t/custom.t
 t/meta-names.t
 t/release-pod-syntax.t
 t/round-trip.t
