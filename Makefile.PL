@@ -24,11 +24,10 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Carp' => '0',
     'Data::Section' => '0',
-    'English' => '0',
     'Sub::Install' => '0',
     'Text::Template' => '0'
   },
-  'VERSION' => '0.103000',
+  'VERSION' => '0.103001',
   'test' => {
     'TESTS' => 't/*.t'
   }

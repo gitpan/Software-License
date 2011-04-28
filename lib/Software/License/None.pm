@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::None;
 BEGIN {
-  $Software::License::None::VERSION = '0.103000';
+  $Software::License::None::VERSION = '0.103001';
 }
 use base 'Software::License';
 # ABSTRACT: describes a "license" that gives no license for re-use
@@ -24,7 +24,7 @@ Software::License::None - describes a "license" that gives no license for re-use
 
 =head1 VERSION
 
-version 0.103000
+version 0.103001
 
 =head1 AUTHOR
 

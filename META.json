@@ -4,7 +4,7 @@
       "Ricardo Signes <rjbs@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200005, CPAN::Meta::Converter version 2.110580",
+   "generated_by" : "Dist::Zilla version 4.200005, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "perl_5"
    ],
@@ -23,7 +23,6 @@
          "requires" : {
             "Carp" : 0,
             "Data::Section" : 0,
-            "English" : 0,
             "Sub::Install" : 0,
             "Text::Template" : 0,
             "perl" : "5.006"
@@ -42,7 +41,7 @@
          "url" : "git://git.codesimply.com/Software-License.git"
       }
    },
-   "version" : "0.103000",
+   "version" : "0.103001",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -158,7 +157,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Repository",
             "name" : "@RJBS/Repository",
-            "version" : "0.17"
+            "version" : "0.18"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
