@@ -3,7 +3,7 @@ use warnings;
 use 5.006; # warnings
 package Software::License;
 BEGIN {
-  $Software::License::VERSION = '0.103001';
+  $Software::License::VERSION = '0.103002';
 }
 # ABSTRACT: packages that provide templated software licenses
 
@@ -90,7 +90,7 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.103001
+version 0.103002
 
 =head1 SYNOPSIS
 
@@ -164,6 +164,12 @@ META.json or META.yml file, according to the CPAN Meta spec v2, or undef if
 there is no known string to use.  If this method does not exist, and
 C<meta_name> returns open_source, restricted, unrestricted, or unknown, that
 value will be used.
+
+=head1 LOOKING UP LICENSE CLASSES
+
+If you have an entry in a F<META.yml> or F<META.json> file, or similar
+metadata, and want to look up the Software::License class to use, there are
+useful tools in L<Software::LicenseUtils>.
 
 =head1 TODO
 

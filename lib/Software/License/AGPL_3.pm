@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::AGPL_3;
 BEGIN {
-  $Software::License::AGPL_3::VERSION = '0.103001';
+  $Software::License::AGPL_3::VERSION = '0.103002';
 }
 use base 'Software::License';
 # ABSTRACT: GNU Affero General Public License, Version 3
@@ -24,7 +24,7 @@ Software::License::AGPL_3 - GNU Affero General Public License, Version 3
 
 =head1 VERSION
 
-version 0.103001
+version 0.103002
 
 =head1 AUTHOR
 

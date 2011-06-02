@@ -2,12 +2,12 @@ use strict;
 use warnings;
 package Software::License::GFDL_1_2;
 BEGIN {
-  $Software::License::GFDL_1_2::VERSION = '0.103001';
+  $Software::License::GFDL_1_2::VERSION = '0.103002';
 }
 use base 'Software::License';
-# ABSTRACT: The GNU Free Documentation License
+# ABSTRACT: The GNU Free Documentation License v1.2
 
-sub name { 'GNU Free Documentation License' }
+sub name { 'GNU Free Documentation License v1.2' }
 sub url  { 'http://www.gnu.org/copyleft/fdl.html' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'gfdl_1_2' }
@@ -19,11 +19,11 @@ sub meta2_name { 'gfdl_1_2' }
 
 =head1 NAME
 
-Software::License::GFDL_1_2 - The GNU Free Documentation License
+Software::License::GFDL_1_2 - The GNU Free Documentation License v1.2
 
 =head1 VERSION
 
-version 0.103001
+version 0.103002
 
 =head1 AUTHOR
 

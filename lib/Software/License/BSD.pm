@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::BSD;
 BEGIN {
-  $Software::License::BSD::VERSION = '0.103001';
+  $Software::License::BSD::VERSION = '0.103002';
 }
 use base 'Software::License';
 # ABSTRACT: The (three-clause) BSD License
@@ -23,7 +23,7 @@ Software::License::BSD - The (three-clause) BSD License
 
 =head1 VERSION
 
-version 0.103001
+version 0.103002
 
 =head1 AUTHOR
 

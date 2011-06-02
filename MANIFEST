@@ -17,6 +17,7 @@ lib/Software/License/CC0_1_0.pm
 lib/Software/License/Custom.pm
 lib/Software/License/FreeBSD.pm
 lib/Software/License/GFDL_1_2.pm
+lib/Software/License/GFDL_1_3.pm
 lib/Software/License/GPL_1.pm
 lib/Software/License/GPL_2.pm
 lib/Software/License/GPL_3.pm

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::SSLeay;
 BEGIN {
-  $Software::License::SSLeay::VERSION = '0.103001';
+  $Software::License::SSLeay::VERSION = '0.103002';
 }
 use base 'Software::License';
 # ABSTRACT: The Original SSLeay License
@@ -23,7 +23,7 @@ Software::License::SSLeay - The Original SSLeay License
 
 =head1 VERSION
 
-version 0.103001
+version 0.103002
 
 =head1 AUTHOR
 
