@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Software::License::Sun;
-BEGIN {
-  $Software::License::Sun::VERSION = '0.103002';
+{
+  $Software::License::Sun::VERSION = '0.103003';
 }
 use base 'Software::License';
 # ABSTRACT: Sun Internet Standards Source License (SISSL)
@@ -24,7 +24,7 @@ Software::License::Sun - Sun Internet Standards Source License (SISSL)
 
 =head1 VERSION
 
-version 0.103002
+version 0.103003
 
 =head1 AUTHOR
 

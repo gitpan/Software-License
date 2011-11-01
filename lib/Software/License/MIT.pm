@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Software::License::MIT;
-BEGIN {
-  $Software::License::MIT::VERSION = '0.103002';
+{
+  $Software::License::MIT::VERSION = '0.103003';
 }
 use base 'Software::License';
 # ABSTRACT: The MIT (aka X11) License
@@ -23,7 +23,7 @@ Software::License::MIT - The MIT (aka X11) License
 
 =head1 VERSION
 
-version 0.103002
+version 0.103003
 
 =head1 AUTHOR
 

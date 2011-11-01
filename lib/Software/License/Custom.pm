@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Software::License::Custom;
-BEGIN {
-  $Software::License::Custom::VERSION = '0.103002';
+{
+  $Software::License::Custom::VERSION = '0.103003';
 }
 # ABSTRACT: custom license handler
 
@@ -100,7 +100,7 @@ Software::License::Custom - custom license handler
 
 =head1 VERSION
 
-version 0.103002
+version 0.103003
 
 =head1 DESCRIPTION
 

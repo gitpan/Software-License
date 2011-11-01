@@ -2,8 +2,8 @@ use strict;
 use warnings;
 use 5.006; # warnings
 package Software::License;
-BEGIN {
-  $Software::License::VERSION = '0.103002';
+{
+  $Software::License::VERSION = '0.103003';
 }
 # ABSTRACT: packages that provide templated software licenses
 
@@ -90,7 +90,7 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.103002
+version 0.103003
 
 =head1 SYNOPSIS
 

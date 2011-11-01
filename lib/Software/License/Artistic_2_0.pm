@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Software::License::Artistic_2_0;
-BEGIN {
-  $Software::License::Artistic_2_0::VERSION = '0.103002';
+{
+  $Software::License::Artistic_2_0::VERSION = '0.103003';
 }
 use base 'Software::License';
 # ABSTRACT: The Artistic License 2.0
@@ -23,7 +23,7 @@ Software::License::Artistic_2_0 - The Artistic License 2.0
 
 =head1 VERSION
 
-version 0.103002
+version 0.103003
 
 =head1 AUTHOR
 

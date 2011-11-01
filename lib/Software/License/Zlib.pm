@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Software::License::Zlib;
-BEGIN {
-  $Software::License::Zlib::VERSION = '0.103002';
+{
+  $Software::License::Zlib::VERSION = '0.103003';
 }
 use base 'Software::License';
 # ABSTRACT: The zlib License
@@ -24,7 +24,7 @@ Software::License::Zlib - The zlib License
 
 =head1 VERSION
 
-version 0.103002
+version 0.103003
 
 =head1 AUTHOR
 
