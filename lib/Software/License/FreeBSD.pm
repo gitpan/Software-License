@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::FreeBSD;
 {
-  $Software::License::FreeBSD::VERSION = '0.103003';
+  $Software::License::FreeBSD::VERSION = '0.103004';
 }
 use base 'Software::License';
 # ABSTRACT: The FreeBSD License (aka two-clause BSD)
@@ -24,7 +24,7 @@ Software::License::FreeBSD - The FreeBSD License (aka two-clause BSD)
 
 =head1 VERSION
 
-version 0.103003
+version 0.103004
 
 =head1 AUTHOR
 

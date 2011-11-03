@@ -46,7 +46,7 @@
          "web" : "https://github.com/rjbs/software-license"
       }
    },
-   "version" : "0.103003",
+   "version" : "0.103004",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

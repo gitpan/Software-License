@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::LGPL_2_1;
 {
-  $Software::License::LGPL_2_1::VERSION = '0.103003';
+  $Software::License::LGPL_2_1::VERSION = '0.103004';
 }
 use base 'Software::License';
 # ABSTRACT: GNU Lesser General Public License, Version 2.1
@@ -23,7 +23,7 @@ Software::License::LGPL_2_1 - GNU Lesser General Public License, Version 2.1
 
 =head1 VERSION
 
-version 0.103003
+version 0.103004
 
 =head1 AUTHOR
 
@@ -47,7 +47,8 @@ Version 2.1, February 1999
   (The master copy of this license lives on the GNU website.)
 
 Copyright (C) 1991, 1999 Free Software Foundation, Inc. 59
-Temple Place, Suite 330, Boston, MA 02111-1307 USA
+51 Franklin St, Suite 500, Boston, MA  02110-1335  USA
+
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 

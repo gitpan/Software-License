@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::LicenseUtils;
 {
-  $Software::LicenseUtils::VERSION = '0.103003';
+  $Software::LicenseUtils::VERSION = '0.103004';
 }
 # ABSTRACT: little useful bits of code for licensey things
 
@@ -107,7 +107,7 @@ Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 VERSION
 
-version 0.103003
+version 0.103004
 
 =head1 METHODS
 

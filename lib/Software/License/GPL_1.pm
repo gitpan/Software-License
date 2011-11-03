@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::GPL_1;
 {
-  $Software::License::GPL_1::VERSION = '0.103003';
+  $Software::License::GPL_1::VERSION = '0.103004';
 }
 use base 'Software::License';
 # ABSTRACT: GNU General Public License, Version 1
@@ -23,7 +23,7 @@ Software::License::GPL_1 - GNU General Public License, Version 1
 
 =head1 VERSION
 
-version 0.103003
+version 0.103004
 
 =head1 AUTHOR
 
@@ -45,7 +45,7 @@ __LICENSE__
                      Version 1, February 1989
 
  Copyright (C) 1989 Free Software Foundation, Inc.
-                    51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 51 Franklin St, Suite 500, Boston, MA  02110-1335  USA
 
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.

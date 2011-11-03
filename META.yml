@@ -25,7 +25,7 @@ requires:
 resources:
   homepage: https://github.com/rjbs/software-license
   repository: https://github.com/rjbs/software-license.git
-version: 0.103003
+version: 0.103004
 x_Dist_Zilla:
   plugins:
     -

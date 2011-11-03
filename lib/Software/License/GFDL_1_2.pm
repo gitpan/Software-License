@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::GFDL_1_2;
 {
-  $Software::License::GFDL_1_2::VERSION = '0.103003';
+  $Software::License::GFDL_1_2::VERSION = '0.103004';
 }
 use base 'Software::License';
 # ABSTRACT: The GNU Free Documentation License v1.2
@@ -23,7 +23,7 @@ Software::License::GFDL_1_2 - The GNU Free Documentation License v1.2
 
 =head1 VERSION
 
-version 0.103003
+version 0.103004
 
 =head1 AUTHOR
 
@@ -54,7 +54,8 @@ __LICENSE__
 
 
  Copyright (C) 2000,2001,2002  Free Software Foundation, Inc.
-     51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 51 Franklin St, Suite 500, Boston, MA  02110-1335  USA
+
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
