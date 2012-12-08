@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Mozilla_1_1;
 {
-  $Software::License::Mozilla_1_1::VERSION = '0.103004';
+  $Software::License::Mozilla_1_1::VERSION = '0.103005';
 }
 use base 'Software::License';
 # ABSTRACT: The Mozilla Public License 1.1
@@ -14,7 +14,6 @@ sub meta2_name { 'mozilla_1_1' }
 
 1;
 
-
 =pod
 
 =head1 NAME
@@ -23,7 +22,7 @@ Software::License::Mozilla_1_1 - The Mozilla Public License 1.1
 
 =head1 VERSION
 
-version 0.103004
+version 0.103005
 
 =head1 AUTHOR
 
@@ -31,13 +30,12 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Ricardo Signes.
+This software is copyright (c) 2012 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
 
 __DATA__
 __LICENSE__
