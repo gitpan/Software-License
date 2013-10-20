@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Custom;
 {
-  $Software::License::Custom::VERSION = '0.103005';
+  $Software::License::Custom::VERSION = '0.103006';
 }
 # ABSTRACT: custom license handler
 
@@ -101,7 +101,7 @@ Software::License::Custom - custom license handler
 
 =head1 VERSION
 
-version 0.103005
+version 0.103006
 
 =head1 DESCRIPTION
 
@@ -238,7 +238,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Ricardo Signes.
+This software is copyright (c) 2013 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::CC0_1_0;
 {
-  $Software::License::CC0_1_0::VERSION = '0.103005';
+  $Software::License::CC0_1_0::VERSION = '0.103006';
 }
 use base 'Software::License';
 # ABSTRACT: the "public domain"-like CC0 license, version 1.0
@@ -24,7 +24,7 @@ Software::License::CC0_1_0 - the "public domain"-like CC0 license, version 1.0
 
 =head1 VERSION
 
-version 0.103005
+version 0.103006
 
 =head1 WARNING
 
@@ -43,7 +43,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Ricardo Signes.
+This software is copyright (c) 2013 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

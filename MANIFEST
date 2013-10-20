@@ -36,7 +36,6 @@ lib/Software/License/SSLeay.pm
 lib/Software/License/Sun.pm
 lib/Software/License/Zlib.pm
 lib/Software/LicenseUtils.pm
-t/00-compile.t
 t/000-report-versions-tiny.t
 t/basic.t
 t/bsd-url.t
