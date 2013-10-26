@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::LGPL_3_0;
 {
-  $Software::License::LGPL_3_0::VERSION = '0.103006';
+  $Software::License::LGPL_3_0::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: GNU Lesser General Public License, Version 3
 
 use Software::License::GPL_3;
@@ -31,13 +31,15 @@ sub fulltext {
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::LGPL_3_0 - GNU Lesser General Public License, Version 3
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

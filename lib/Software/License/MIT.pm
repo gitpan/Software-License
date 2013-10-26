@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::MIT;
 {
-  $Software::License::MIT::VERSION = '0.103006';
+  $Software::License::MIT::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The MIT (aka X11) License
 
 sub name { 'The MIT (X11) License' }
@@ -16,13 +16,15 @@ sub meta2_name { 'mit' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::MIT - The MIT (aka X11) License
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::None;
 {
-  $Software::License::None::VERSION = '0.103006';
+  $Software::License::None::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: describes a "license" that gives no license for re-use
 
 sub name      { q("No License" License) }
@@ -17,13 +17,15 @@ sub meta2_name { 'restricted'  }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::None - describes a "license" that gives no license for re-use
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

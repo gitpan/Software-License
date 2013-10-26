@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::SSLeay;
 {
-  $Software::License::SSLeay::VERSION = '0.103006';
+  $Software::License::SSLeay::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The Original SSLeay License
 
 sub name { 'Original SSLeay License' }
@@ -16,13 +16,15 @@ sub meta2_name { 'ssleay' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::SSLeay - The Original SSLeay License
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

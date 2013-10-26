@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::Artistic_2_0;
 {
-  $Software::License::Artistic_2_0::VERSION = '0.103006';
+  $Software::License::Artistic_2_0::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The Artistic License 2.0
 
 sub name { 'The Artistic License 2.0 (GPL Compatible)' }
@@ -16,13 +16,15 @@ sub meta2_name { 'artistic_2' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::Artistic_2_0 - The Artistic License 2.0
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

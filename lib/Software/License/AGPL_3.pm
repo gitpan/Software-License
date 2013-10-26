@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::AGPL_3;
 {
-  $Software::License::AGPL_3::VERSION = '0.103006';
+  $Software::License::AGPL_3::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: GNU Affero General Public License, Version 3
 
 sub name { 'The GNU Affero General Public License, Version 3, November 2007' }
@@ -17,13 +17,15 @@ sub meta2_name { 'agpl_3' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::AGPL_3 - GNU Affero General Public License, Version 3
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

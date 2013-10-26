@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::FreeBSD;
 {
-  $Software::License::FreeBSD::VERSION = '0.103006';
+  $Software::License::FreeBSD::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The FreeBSD License (aka two-clause BSD)
 
 sub name { 'The (two-clause) FreeBSD License' }
@@ -17,13 +17,15 @@ sub meta2_name { 'freebsd' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::FreeBSD - The FreeBSD License (aka two-clause BSD)
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

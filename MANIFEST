@@ -41,6 +41,7 @@ t/basic.t
 t/bsd-url.t
 t/custom-license
 t/custom.t
+t/guess_meta_license.t
 t/meta-names.t
 t/round-trip.t
 t/utils.t

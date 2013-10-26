@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::CC0_1_0;
 {
-  $Software::License::CC0_1_0::VERSION = '0.103006';
+  $Software::License::CC0_1_0::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: the "public domain"-like CC0 license, version 1.0
 
 
@@ -18,13 +18,15 @@ sub meta2_name { 'unrestricted' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::CC0_1_0 - the "public domain"-like CC0 license, version 1.0
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 WARNING
 

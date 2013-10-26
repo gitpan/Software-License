@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::BSD;
 {
-  $Software::License::BSD::VERSION = '0.103006';
+  $Software::License::BSD::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The (three-clause) BSD License
 
 sub name { 'The (three-clause) BSD License' }
@@ -16,13 +16,15 @@ sub meta2_name { 'bsd' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::BSD - The (three-clause) BSD License
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

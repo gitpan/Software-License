@@ -57,7 +57,8 @@ eval { $v .= pmver('Module::Load','any version') };
 eval { $v .= pmver('Sub::Install','any version') };
 eval { $v .= pmver('Test::More','0.96') };
 eval { $v .= pmver('Text::Template','any version') };
-eval { $v .= pmver('base','any version') };
+eval { $v .= pmver('Try::Tiny','any version') };
+eval { $v .= pmver('parent','any version') };
 eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('warnings','any version') };
 

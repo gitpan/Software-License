@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::GPL_2;
 {
-  $Software::License::GPL_2::VERSION = '0.103006';
+  $Software::License::GPL_2::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: GNU General Public License, Version 2
 
 sub name { 'The GNU General Public License, Version 2, June 1991' }
@@ -16,13 +16,15 @@ sub meta2_name { 'gpl_2' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::GPL_2 - GNU General Public License, Version 2
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

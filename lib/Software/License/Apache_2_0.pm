@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::Apache_2_0;
 {
-  $Software::License::Apache_2_0::VERSION = '0.103006';
+  $Software::License::Apache_2_0::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The Apache License, Version 2.0
 
 sub name { 'The Apache License, Version 2.0, January 2004' }
@@ -16,13 +16,15 @@ sub meta2_name { 'apache_2_0' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::Apache_2_0 - The Apache License, Version 2.0
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 

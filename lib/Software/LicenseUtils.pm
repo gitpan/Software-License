@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::LicenseUtils;
 {
-  $Software::LicenseUtils::VERSION = '0.103006';
+  $Software::LicenseUtils::VERSION = '0.103007';
 }
 # ABSTRACT: little useful bits of code for licensey things
 
@@ -108,7 +108,7 @@ sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm;
+  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_0-9]+)["']?}gm;
 
   return unless $license_text and my $license = $meta_keys{ $license_text };
 
@@ -125,13 +125,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 METHODS
 

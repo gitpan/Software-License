@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::PostgreSQL;
 {
-  $Software::License::PostgreSQL::VERSION = '0.103006';
+  $Software::License::PostgreSQL::VERSION = '0.103007';
 }
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The PostgreSQL License
 
 sub name { 'The PostgreSQL License' }
@@ -17,13 +17,15 @@ sub meta2_name { 'open_source' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::PostgreSQL - The PostgreSQL License
 
 =head1 VERSION
 
-version 0.103006
+version 0.103007
 
 =head1 AUTHOR
 
