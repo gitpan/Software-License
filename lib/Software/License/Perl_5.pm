@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Perl_5;
 {
-  $Software::License::Perl_5::VERSION = '0.103007';
+  $Software::License::Perl_5::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The Perl 5 License (Artistic 1 & GPL 1)
@@ -35,15 +35,13 @@ sub _tal {
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::Perl_5 - The Perl 5 License (Artistic 1 & GPL 1)
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

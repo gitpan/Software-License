@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Zlib;
 {
-  $Software::License::Zlib::VERSION = '0.103007';
+  $Software::License::Zlib::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The zlib License
@@ -17,15 +17,13 @@ sub meta2_name { 'zlib' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::Zlib - The zlib License
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

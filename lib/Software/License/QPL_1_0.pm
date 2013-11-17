@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::QPL_1_0;
 {
-  $Software::License::QPL_1_0::VERSION = '0.103007';
+  $Software::License::QPL_1_0::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The Q Public License, Version 1.0
@@ -17,15 +17,13 @@ sub meta2_name { 'qpl_1_0' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::QPL_1_0 - The Q Public License, Version 1.0
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

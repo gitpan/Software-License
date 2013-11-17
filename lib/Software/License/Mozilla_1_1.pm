@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Mozilla_1_1;
 {
-  $Software::License::Mozilla_1_1::VERSION = '0.103007';
+  $Software::License::Mozilla_1_1::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The Mozilla Public License 1.1
@@ -16,15 +16,13 @@ sub meta2_name { 'mozilla_1_1' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::Mozilla_1_1 - The Mozilla Public License 1.1
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

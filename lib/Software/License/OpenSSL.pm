@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::OpenSSL;
 {
-  $Software::License::OpenSSL::VERSION = '0.103007';
+  $Software::License::OpenSSL::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The OpenSSL License
@@ -26,15 +26,13 @@ sub _ssleay {
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::OpenSSL - The OpenSSL License
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Custom;
 {
-  $Software::License::Custom::VERSION = '0.103007';
+  $Software::License::Custom::VERSION = '0.103008';
 }
 # ABSTRACT: custom license handler
 
@@ -95,15 +95,13 @@ __END__
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::Custom - custom license handler
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 DESCRIPTION
 

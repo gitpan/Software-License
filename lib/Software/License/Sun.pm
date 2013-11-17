@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::Sun;
 {
-  $Software::License::Sun::VERSION = '0.103007';
+  $Software::License::Sun::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: Sun Internet Standards Source License (SISSL)
@@ -17,15 +17,13 @@ sub meta2_name { 'sun' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::Sun - Sun Internet Standards Source License (SISSL)
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

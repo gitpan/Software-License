@@ -1,8 +1,10 @@
 use strict;
 use warnings;
+use Carp;
+
 package Software::LicenseUtils;
 {
-  $Software::LicenseUtils::VERSION = '0.103007';
+  $Software::LicenseUtils::VERSION = '0.103008';
 }
 # ABSTRACT: little useful bits of code for licensey things
 
@@ -67,19 +69,26 @@ for my $lib (map { "$_/Software/License" } @INC) {
 sub guess_license_from_pod {
   my ($class, $pm_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
+  return unless $pm_text =~ /
+    (
+      =head \d \s+
+      (?:licen[cs]e|licensing|copyright|legal)\b
+    )
+  /ixmsg;
+
+  my $header = $1;
 
 	if (
 		$pm_text =~ m/
+      \G
       (
-        =head \d \s+
-        (?:licen[cs]e|licensing|copyright|legal)\b
         .*?
       )
       (=head\\d.*|=cut.*|)
       \z
     /ixms
   ) {
-		my $license_text = $1;
+		my $license_text = "$header$1";
 
     for (my $i = 0; $i < @phrases; $i += 2) {
       my ($pattern, $license) = @phrases[ $i .. $i+1 ];
@@ -117,7 +126,34 @@ sub guess_license_from_meta {
 
 *guess_license_from_meta_yml = \&guess_license_from_meta;
 
+my %short_name = (
+  'GPL-1'      =>  'Software::License::GPL_1',
+  'GPL-2'      =>  'Software::License::GPL_2',
+  'GPL-3'      =>  'Software::License::GPL_3',
+  'LGPL-2'     =>  'Software::License::LGPL_2',
+  'LGPL-2.1'   =>  'Software::License::LGPL_2_1',
+  'LGPL-3'     =>  'Software::License::LGPL_3_0',
+  'LGPL-3.0'   =>  'Software::License::LGPL_3_0',
+  'Artistic'   =>  'Software::License::Artistic_1_0',
+  'Artistic-1' =>  'Software::License::Artistic_1_0',
+  'Artistic-2' =>  'Software::License::Artistic_2_0',
+);
 
+
+sub new_from_short_name {
+  my ( $class, $arg ) = @_;
+
+  Carp::croak "no license short name specified"
+    unless defined $arg->{short_name};
+  my $short = delete $arg->{short_name};
+  Carp::croak "Unknow license with short name $short"
+    unless $short_name{$short};
+
+  my $lic_file = my $lic_class = $short_name{$short} ;
+  $lic_file =~ s!::!/!g;
+  require "$lic_file.pm";
+  return $lic_class->new( $arg );
+}
 
 1;
 
@@ -125,15 +161,13 @@ __END__
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 METHODS
 
@@ -154,6 +188,17 @@ Calling this method in scalar context is a fatal error.
 Given the content of the META.(yml|json) file found in a CPAN distribution, this
 method makes a guess as to which licenses may apply to the distribution.  It
 will return a list of zero or more Software::License instances or classes.
+
+=head2 new_from_short_name
+
+  my $license_object = Software::LicenseUtils->new_from_short_name( {
+     short_name => 'GPL-1',
+     holder => 'X. Ample'
+  }) ;
+
+Create a new L<Software::License> object from the license specified
+with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
+C<Artistic> and C<Artistic-*>
 
 =head1 AUTHOR
 

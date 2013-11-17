@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::GFDL_1_3;
 {
-  $Software::License::GFDL_1_3::VERSION = '0.103007';
+  $Software::License::GFDL_1_3::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The GNU Free Documentation License v1.3
@@ -16,15 +16,13 @@ sub meta2_name { 'gfdl_1_3' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::GFDL_1_3 - The GNU Free Documentation License v1.3
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

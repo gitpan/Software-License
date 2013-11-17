@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Software::License::LGPL_2_1;
 {
-  $Software::License::LGPL_2_1::VERSION = '0.103007';
+  $Software::License::LGPL_2_1::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: GNU Lesser General Public License, Version 2.1
@@ -16,15 +16,13 @@ sub meta2_name { 'lgpl_2_1' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::LGPL_2_1 - GNU Lesser General Public License, Version 2.1
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 

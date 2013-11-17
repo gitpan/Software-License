@@ -2,13 +2,13 @@ use strict;
 use warnings;
 package Software::License::BSD;
 {
-  $Software::License::BSD::VERSION = '0.103007';
+  $Software::License::BSD::VERSION = '0.103008';
 }
 use parent 'Software::License';
 # ABSTRACT: The (three-clause) BSD License
 
 sub name { 'The (three-clause) BSD License' }
-sub url  { 'http://www.opensource.org/licenses/bsd-license.php' }
+sub url  { 'http://opensource.org/licenses/BSD-3-Clause' }
 sub meta_name  { 'bsd' }
 sub meta2_name { 'bsd' }
 
@@ -16,15 +16,13 @@ sub meta2_name { 'bsd' }
 
 =pod
 
-=encoding UTF-8
-
 =head1 NAME
 
 Software::License::BSD - The (three-clause) BSD License
 
 =head1 VERSION
 
-version 0.103007
+version 0.103008
 
 =head1 AUTHOR
 
@@ -61,7 +59,7 @@ met:
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
 IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
 TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
 CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
 EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
 PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
