@@ -3,15 +3,23 @@ use warnings;
 use Carp;
 
 package Software::LicenseUtils;
-{
-  $Software::LicenseUtils::VERSION = '0.103008';
-}
 # ABSTRACT: little useful bits of code for licensey things
-
+$Software::LicenseUtils::VERSION = '0.103009';
 use File::Spec;
 use IO::Dir;
 use Module::Load;
 
+# =method guess_license_from_pod
+#
+#   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
+#
+# Given text containing POD, like a .pm file, this method will attempt to guess
+# at the license under which the code is available.  This method will either
+# a list of Software::License classes (or instances) or false.
+#
+# Calling this method in scalar context is a fatal error.
+#
+# =cut
 
 my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
 my @phrases = (
@@ -38,7 +46,9 @@ my @phrases = (
   'MIT'                        => 'MIT',
 );
 
-my %meta_keys = ();
+my %meta_keys  = ();
+my %meta1_keys = ();
+my %meta2_keys = ();
 
 # find all known Software::License::* modules and get identification data
 #
@@ -58,8 +68,10 @@ for my $lib (map { "$_/Software/License" } @INC) {
       (my $mod = $file) =~ s{\.pm$}{};
       my $class = "Software::License::$mod";
       load $class;
-      $meta_keys{ $class->meta_name }{$mod}  = undef;
-      $meta_keys{ $class->meta2_name }{$mod} = undef;
+      $meta_keys{  $class->meta_name  }{$mod} = undef;
+      $meta1_keys{ $class->meta_name  }{$mod} = undef;
+      $meta_keys{  $class->meta2_name }{$mod} = undef;
+      $meta2_keys{ $class->meta2_name }{$mod} = undef;
       my $name = $class->name;
       unshift @phrases, qr/\Q$name\E/, [$mod];
     };
@@ -104,7 +116,7 @@ sub guess_license_from_pod {
                    :                                 $license;
 
         return unless @result;
-				return map { "Software::License::$_" } @result;
+				return map { "Software::License::$_" } sort @result;
 			}
 		}
 	}
@@ -112,6 +124,15 @@ sub guess_license_from_pod {
 	return;
 }
 
+# =method guess_license_from_meta
+#
+#   my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
+#
+# Given the content of the META.(yml|json) file found in a CPAN distribution, this
+# method makes a guess as to which licenses may apply to the distribution.  It
+# will return a list of zero or more Software::License instances or classes.
+#
+# =cut
 
 sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
@@ -124,7 +145,32 @@ sub guess_license_from_meta {
   return map { "Software::License::$_" } sort keys %$license;
 }
 
-*guess_license_from_meta_yml = \&guess_license_from_meta;
+{
+  no warnings 'once';
+  *guess_license_from_meta_yml = \&guess_license_from_meta;
+}
+
+# =method guess_license_from_meta_key
+#
+#   my @guesses = Software::LicenseUtils->guess_license_from_meta_key($key, $v);
+#
+# This method returns zero or more Software::License classes known to use C<$key>
+# as their META key.  If C<$v> is supplied, it specifies whether to treat C<$key>
+# as a v1 or v2 meta entry.  Any value other than 1 or 2 will raise an exception.
+#
+# =cut
+
+sub guess_license_from_meta_key {
+  my ($self, $key, $v) = @_;
+
+  my $src = (! defined $v) ? \%meta_keys
+          : $v eq '1'      ? \%meta1_keys
+          : $v eq '2'      ? \%meta2_keys
+          : Carp::croak("illegal META version: $v");
+
+  return unless $src->{$key};
+  return map { "Software::License::$_" } sort keys %{ $src->{$key} };
+}
 
 my %short_name = (
   'GPL-1'      =>  'Software::License::GPL_1',
@@ -139,6 +185,18 @@ my %short_name = (
   'Artistic-2' =>  'Software::License::Artistic_2_0',
 );
 
+# =method new_from_short_name
+#
+#   my $license_object = Software::LicenseUtils->new_from_short_name( {
+#      short_name => 'GPL-1',
+#      holder => 'X. Ample'
+#   }) ;
+#
+# Create a new L<Software::License> object from the license specified
+# with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
+# C<Artistic> and C<Artistic-*>
+#
+# =cut
 
 sub new_from_short_name {
   my ( $class, $arg ) = @_;
@@ -161,13 +219,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 VERSION
 
-version 0.103008
+version 0.103009
 
 =head1 METHODS
 
@@ -189,6 +249,14 @@ Given the content of the META.(yml|json) file found in a CPAN distribution, this
 method makes a guess as to which licenses may apply to the distribution.  It
 will return a list of zero or more Software::License instances or classes.
 
+=head2 guess_license_from_meta_key
+
+  my @guesses = Software::LicenseUtils->guess_license_from_meta_key($key, $v);
+
+This method returns zero or more Software::License classes known to use C<$key>
+as their META key.  If C<$v> is supplied, it specifies whether to treat C<$key>
+as a v1 or v2 meta entry.  Any value other than 1 or 2 will raise an exception.
+
 =head2 new_from_short_name
 
   my $license_object = Software::LicenseUtils->new_from_short_name( {
@@ -206,7 +274,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Ricardo Signes.
+This software is copyright (c) 2014 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

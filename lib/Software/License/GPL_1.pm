@@ -1,9 +1,7 @@
 use strict;
 use warnings;
 package Software::License::GPL_1;
-{
-  $Software::License::GPL_1::VERSION = '0.103008';
-}
+$Software::License::GPL_1::VERSION = '0.103009';
 use parent 'Software::License';
 # ABSTRACT: GNU General Public License, Version 1
 
@@ -16,13 +14,15 @@ sub meta2_name { 'gpl_1' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::GPL_1 - GNU General Public License, Version 1
 
 =head1 VERSION
 
-version 0.103008
+version 0.103009
 
 =head1 AUTHOR
 
@@ -30,7 +30,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Ricardo Signes.
+This software is copyright (c) 2014 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -43,7 +43,7 @@ __LICENSE__
                      Version 1, February 1989
 
  Copyright (C) 1989 Free Software Foundation, Inc.
- 51 Franklin St, Suite 500, Boston, MA  02110-1335  USA
+ 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.

@@ -1,9 +1,7 @@
 use strict;
 use warnings;
 package Software::License::SSLeay;
-{
-  $Software::License::SSLeay::VERSION = '0.103008';
-}
+$Software::License::SSLeay::VERSION = '0.103009';
 use parent 'Software::License';
 # ABSTRACT: The Original SSLeay License
 
@@ -16,13 +14,15 @@ sub meta2_name { 'ssleay' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::SSLeay - The Original SSLeay License
 
 =head1 VERSION
 
-version 0.103008
+version 0.103009
 
 =head1 AUTHOR
 
@@ -30,7 +30,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Ricardo Signes.
+This software is copyright (c) 2014 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -51,7 +51,7 @@ __LICENSE__
   included with this distribution is covered by the same copyright terms
   except that the holder is Tim Hudson (tjh@cryptsoft.com).
 
-  Copyright remains Eric Young’s, and as such any Copyright notices in the code
+  Copyright remains Eric Youngâs, and as such any Copyright notices in the code
   are not to be removed. If this package is used in a product, Eric Young
   should be given attribution as the author of the parts of the library used.
   This can be in the form of a textual message at program startup or in
@@ -67,16 +67,16 @@ __LICENSE__
        documentation and/or other materials provided with the distribution.
     3. All advertising materials mentioning features or use of this software
        must display the following acknowledgement:
-       “This product includes cryptographic software written by
-        Eric Young (eay@cryptsoft.com)”
-       The word ‘cryptographic’ can be left out if the rouines from the library
+       âThis product includes cryptographic software written by
+        Eric Young (eay@cryptsoft.com)â
+       The word âcryptographicâ can be left out if the rouines from the library
        being used are not cryptographic related :-).
     4. If you include any Windows specific code (or a derivative thereof) from
        the apps directory (application code) you must include an
-       acknowledgement: “This product includes software written by Tim Hudson
-       (tjh@cryptsoft.com)”
+       acknowledgement: âThis product includes software written by Tim Hudson
+       (tjh@cryptsoft.com)â
 
-  THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ‘‘AS IS’’ AND
+  THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ââAS ISââ AND
   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE

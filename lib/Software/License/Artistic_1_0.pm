@@ -1,12 +1,32 @@
 use strict;
 use warnings;
 package Software::License::Artistic_1_0;
-{
-  $Software::License::Artistic_1_0::VERSION = '0.103008';
-}
+$Software::License::Artistic_1_0::VERSION = '0.103009';
 use parent 'Software::License';
 # ABSTRACT: The Artistic License
 
+# =head1 OPTIONS
+#
+# The Artistic License 1.0 has a sometimes-omitted "aggregation clause" which
+# reads:
+#
+#   8. The name of the Copyright Holder may not be used to endorse or promote
+#   products derived from this software without specific prior written
+#   permission.
+#
+# By default, this clause will be included.  To disable it, include the following
+# pair when instantiating the license:
+#
+#   aggregation_clause => 0
+#
+# =head1 METHODS
+#
+# =head2 aggregation_clause
+#
+# This method returns whether the aggregation clause is allowed on this instance.
+# By default this method returns true on instances and dies on the class.
+#
+# =cut
 
 sub aggregation_clause {
   exists $_[0]->{aggregation_clause} ? $_[0]->{aggregation_clause} : 1
@@ -32,13 +52,15 @@ sub meta2_name { 'artistic_1' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::Artistic_1_0 - The Artistic License
 
 =head1 VERSION
 
-version 0.103008
+version 0.103009
 
 =head1 OPTIONS
 
@@ -67,7 +89,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Ricardo Signes.
+This software is copyright (c) 2014 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,12 +1,22 @@
 use strict;
 use warnings;
 package Software::License::CC0_1_0;
-{
-  $Software::License::CC0_1_0::VERSION = '0.103008';
-}
+$Software::License::CC0_1_0::VERSION = '0.103009';
 use parent 'Software::License';
 # ABSTRACT: the "public domain"-like CC0 license, version 1.0
 
+# =head1 WARNING
+#
+# B<You should really think hard before using this license.>
+#
+# This license is provided for those who want to place their software into the
+# public domain.  Doing this means you have waived any copyright protection as
+# much as allowed by law, and that you grant anybody the right to do anything
+# with your software.  You cannot reverse your decision to dedicate software as
+# public property, so use this only if you're quite sure that you mean to do
+# it.
+#
+# =cut
 
 sub name      { q(CC0 License) }
 sub url       { q{http://creativecommons.org/publicdomain/zero/1.0/} }
@@ -18,13 +28,15 @@ sub meta2_name { 'unrestricted' }
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Software::License::CC0_1_0 - the "public domain"-like CC0 license, version 1.0
 
 =head1 VERSION
 
-version 0.103008
+version 0.103009
 
 =head1 WARNING
 
@@ -43,7 +55,7 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Ricardo Signes.
+This software is copyright (c) 2014 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
