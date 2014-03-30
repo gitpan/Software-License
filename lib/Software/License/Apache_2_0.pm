@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Apache_2_0;
-$Software::License::Apache_2_0::VERSION = '0.103009';
+$Software::License::Apache_2_0::VERSION = '0.103010';
 use parent 'Software::License';
 # ABSTRACT: The Apache License, Version 2.0
 
@@ -22,7 +22,7 @@ Software::License::Apache_2_0 - The Apache License, Version 2.0
 
 =head1 VERSION
 
-version 0.103009
+version 0.103010
 
 =head1 AUTHOR
 

@@ -4,7 +4,7 @@
       "Ricardo Signes <rjbs@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.133380",
+   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "perl_5"
    ],
@@ -59,10 +59,10 @@
          "web" : "https://github.com/rjbs/Software-License"
       }
    },
-   "version" : "0.103009",
+   "version" : "0.103010",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.019009"
+         "version" : "5.019010"
       },
       "plugins" : [
          {
@@ -73,12 +73,12 @@
          {
             "class" : "Dist::Zilla::Plugin::CheckPrereqsIndexed",
             "name" : "@RJBS/CheckPrereqsIndexed",
-            "version" : "0.010"
+            "version" : "0.011"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckExtraTests",
             "name" : "@RJBS/CheckExtraTests",
-            "version" : "0.018"
+            "version" : "0.021"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -94,7 +94,7 @@
                }
             },
             "name" : "@RJBS/RJBS-Outdated",
-            "version" : "0.017"
+            "version" : "0.021"
          },
          {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
@@ -108,7 +108,7 @@
                }
             },
             "name" : "@RJBS/CPAN-Outdated",
-            "version" : "0.017"
+            "version" : "0.021"
          },
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
@@ -146,11 +146,6 @@
             "version" : "5.014"
          },
          {
-            "class" : "Dist::Zilla::Plugin::MakeMaker",
-            "name" : "@RJBS/@Filter/MakeMaker",
-            "version" : "5.014"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@RJBS/@Filter/Manifest",
             "version" : "5.014"
@@ -168,6 +163,16 @@
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@RJBS/@Filter/UploadToCPAN",
+            "version" : "5.014"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MakeMaker",
+            "config" : {
+               "Dist::Zilla::Role::TestRunner" : {
+                  "default_jobs" : 9
+               }
+            },
+            "name" : "@RJBS/MakeMaker",
             "version" : "5.014"
          },
          {

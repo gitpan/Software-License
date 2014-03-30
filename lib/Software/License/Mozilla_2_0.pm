@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Mozilla_2_0;
-$Software::License::Mozilla_2_0::VERSION = '0.103009';
+$Software::License::Mozilla_2_0::VERSION = '0.103010';
 use parent 'Software::License';
 # ABSTRACT: Mozilla Public License Version 2.0
 
@@ -22,7 +22,7 @@ Software::License::Mozilla_2_0 - Mozilla Public License Version 2.0
 
 =head1 VERSION
 
-version 0.103009
+version 0.103010
 
 =head1 AUTHOR
 

@@ -1,32 +1,32 @@
 use strict;
 use warnings;
 package Software::License::Artistic_1_0;
-$Software::License::Artistic_1_0::VERSION = '0.103009';
+$Software::License::Artistic_1_0::VERSION = '0.103010';
 use parent 'Software::License';
 # ABSTRACT: The Artistic License
 
-# =head1 OPTIONS
-#
-# The Artistic License 1.0 has a sometimes-omitted "aggregation clause" which
-# reads:
-#
-#   8. The name of the Copyright Holder may not be used to endorse or promote
-#   products derived from this software without specific prior written
-#   permission.
-#
-# By default, this clause will be included.  To disable it, include the following
-# pair when instantiating the license:
-#
-#   aggregation_clause => 0
-#
-# =head1 METHODS
-#
-# =head2 aggregation_clause
-#
-# This method returns whether the aggregation clause is allowed on this instance.
-# By default this method returns true on instances and dies on the class.
-#
-# =cut
+#pod =head1 OPTIONS
+#pod
+#pod The Artistic License 1.0 has a sometimes-omitted "aggregation clause" which
+#pod reads:
+#pod
+#pod   8. The name of the Copyright Holder may not be used to endorse or promote
+#pod   products derived from this software without specific prior written
+#pod   permission.
+#pod
+#pod By default, this clause will be included.  To disable it, include the following
+#pod pair when instantiating the license:
+#pod
+#pod   aggregation_clause => 0
+#pod
+#pod =head1 METHODS
+#pod
+#pod =head2 aggregation_clause
+#pod
+#pod This method returns whether the aggregation clause is allowed on this instance.
+#pod By default this method returns true on instances and dies on the class.
+#pod
+#pod =cut
 
 sub aggregation_clause {
   exists $_[0]->{aggregation_clause} ? $_[0]->{aggregation_clause} : 1
@@ -60,7 +60,7 @@ Software::License::Artistic_1_0 - The Artistic License
 
 =head1 VERSION
 
-version 0.103009
+version 0.103010
 
 =head1 OPTIONS
 

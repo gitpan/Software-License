@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::None;
-$Software::License::None::VERSION = '0.103009';
+$Software::License::None::VERSION = '0.103010';
 use parent 'Software::License';
 # ABSTRACT: describes a "license" that gives no license for re-use
 
@@ -23,7 +23,7 @@ Software::License::None - describes a "license" that gives no license for re-use
 
 =head1 VERSION
 
-version 0.103009
+version 0.103010
 
 =head1 AUTHOR
 

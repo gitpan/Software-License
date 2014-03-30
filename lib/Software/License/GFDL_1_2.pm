@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::GFDL_1_2;
-$Software::License::GFDL_1_2::VERSION = '0.103009';
+$Software::License::GFDL_1_2::VERSION = '0.103010';
 use parent 'Software::License';
 # ABSTRACT: The GNU Free Documentation License v1.2
 
@@ -22,7 +22,7 @@ Software::License::GFDL_1_2 - The GNU Free Documentation License v1.2
 
 =head1 VERSION
 
-version 0.103009
+version 0.103010
 
 =head1 AUTHOR
 

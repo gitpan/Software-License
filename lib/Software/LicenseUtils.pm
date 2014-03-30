@@ -4,22 +4,22 @@ use Carp;
 
 package Software::LicenseUtils;
 # ABSTRACT: little useful bits of code for licensey things
-$Software::LicenseUtils::VERSION = '0.103009';
+$Software::LicenseUtils::VERSION = '0.103010';
 use File::Spec;
 use IO::Dir;
 use Module::Load;
 
-# =method guess_license_from_pod
-#
-#   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
-#
-# Given text containing POD, like a .pm file, this method will attempt to guess
-# at the license under which the code is available.  This method will either
-# a list of Software::License classes (or instances) or false.
-#
-# Calling this method in scalar context is a fatal error.
-#
-# =cut
+#pod =method guess_license_from_pod
+#pod
+#pod   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
+#pod
+#pod Given text containing POD, like a .pm file, this method will attempt to guess
+#pod at the license under which the code is available.  This method will either
+#pod a list of Software::License classes (or instances) or false.
+#pod
+#pod Calling this method in scalar context is a fatal error.
+#pod
+#pod =cut
 
 my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
 my @phrases = (
@@ -39,8 +39,8 @@ my @phrases = (
     $_[0] == 2 ? 'LGPL_2_1' : $_[0] == 3 ? 'LGPL_3_0' : ()
   },
   'LGPL'                       => [ qw(LGPL_2_1 LGPL_3_0) ],
-  "GPL,? $_v?(\\d)"              => sub { "GPL_$_[0]_0" },
-  'GPL'                        => [ map { "GPL_$_\_0" } (1..3) ],
+  "GPL,? $_v?(\\d)"              => sub { "GPL_$_[0]" },
+  'GPL'                        => [ map { "GPL_$_" } (1..3) ],
   'BSD'                        => 'BSD',
   'Artistic'                   => [ map { "Artistic_$_\_0" } (1..2) ],
   'MIT'                        => 'MIT',
@@ -124,15 +124,15 @@ sub guess_license_from_pod {
 	return;
 }
 
-# =method guess_license_from_meta
-#
-#   my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
-#
-# Given the content of the META.(yml|json) file found in a CPAN distribution, this
-# method makes a guess as to which licenses may apply to the distribution.  It
-# will return a list of zero or more Software::License instances or classes.
-#
-# =cut
+#pod =method guess_license_from_meta
+#pod
+#pod   my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
+#pod
+#pod Given the content of the META.(yml|json) file found in a CPAN distribution, this
+#pod method makes a guess as to which licenses may apply to the distribution.  It
+#pod will return a list of zero or more Software::License instances or classes.
+#pod
+#pod =cut
 
 sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
@@ -150,15 +150,15 @@ sub guess_license_from_meta {
   *guess_license_from_meta_yml = \&guess_license_from_meta;
 }
 
-# =method guess_license_from_meta_key
-#
-#   my @guesses = Software::LicenseUtils->guess_license_from_meta_key($key, $v);
-#
-# This method returns zero or more Software::License classes known to use C<$key>
-# as their META key.  If C<$v> is supplied, it specifies whether to treat C<$key>
-# as a v1 or v2 meta entry.  Any value other than 1 or 2 will raise an exception.
-#
-# =cut
+#pod =method guess_license_from_meta_key
+#pod
+#pod   my @guesses = Software::LicenseUtils->guess_license_from_meta_key($key, $v);
+#pod
+#pod This method returns zero or more Software::License classes known to use C<$key>
+#pod as their META key.  If C<$v> is supplied, it specifies whether to treat C<$key>
+#pod as a v1 or v2 meta entry.  Any value other than 1 or 2 will raise an exception.
+#pod
+#pod =cut
 
 sub guess_license_from_meta_key {
   my ($self, $key, $v) = @_;
@@ -185,18 +185,18 @@ my %short_name = (
   'Artistic-2' =>  'Software::License::Artistic_2_0',
 );
 
-# =method new_from_short_name
-#
-#   my $license_object = Software::LicenseUtils->new_from_short_name( {
-#      short_name => 'GPL-1',
-#      holder => 'X. Ample'
-#   }) ;
-#
-# Create a new L<Software::License> object from the license specified
-# with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
-# C<Artistic> and C<Artistic-*>
-#
-# =cut
+#pod =method new_from_short_name
+#pod
+#pod   my $license_object = Software::LicenseUtils->new_from_short_name( {
+#pod      short_name => 'GPL-1',
+#pod      holder => 'X. Ample'
+#pod   }) ;
+#pod
+#pod Create a new L<Software::License> object from the license specified
+#pod with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
+#pod C<Artistic> and C<Artistic-*>
+#pod
+#pod =cut
 
 sub new_from_short_name {
   my ( $class, $arg ) = @_;
@@ -227,7 +227,7 @@ Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 VERSION
 
-version 0.103009
+version 0.103010
 
 =head1 METHODS
 
